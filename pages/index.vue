@@ -1,5 +1,7 @@
 <script setup lang="ts">
 const online = useOnline()
+const { data: customData } = await useFetch('https://sportlight-api.tranhieudev.com/api/v1/guest/product/now')
+console.log(customData)
 </script>
 
 <template>
@@ -19,5 +21,6 @@ const online = useOnline()
       </template>
     </Suspense>
     <InputEntry />
+    <span class="text-">{{customData}}</span>
   </div>
 </template>
