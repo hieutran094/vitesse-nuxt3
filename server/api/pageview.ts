@@ -6,5 +6,6 @@ let date = new Date();
 export default defineEventHandler(() => ({
   pageview: count++,
   startAt,
-  random
+  random,
+  date
 }))
