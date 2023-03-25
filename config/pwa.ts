@@ -35,17 +35,10 @@ export const pwa: ModuleOptions = {
   },
   workbox: {
     globPatterns: ['**/*.{js,css,html,txt,png,ico,svg}'],
-    navigateFallbackDenylist: [/^\/api\/,/\/api\/],
+    navigateFallbackDenylist: [/^\/api/,/^https:\/\/sportlight-api\.tranhieudev\.com\/api.*/],
     navigateFallback: '/',
     cleanupOutdatedCaches: true,
     runtimeCaching: [
-      {
-            handler: "NetworkOnly",
-            urlPattern: new RegExp("^https://sportlight-api.tranhieudev.com/api$"),
-            method: "*",
-            options: {
-            },
-       },
       {
         urlPattern: /^https:\/\/fonts.googleapis.com\/.*/i,
         handler: 'CacheFirst',
