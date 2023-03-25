@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const online = useOnline()
-const { data } = await useFetch('/api/pageview')
 const { data } = await useFetch('https://sportlight-api.tranhieudev.com/api/v1/guest/product/now')
 console.log(data)
 </script>
