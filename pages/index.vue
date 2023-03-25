@@ -1,9 +1,12 @@
 <script setup lang="ts">
 const online = useOnline()
+const { data } = await useLazyAsyncData('count', () => $fetch('https://sportlight-api.tranhieudev.com/api/v1/guest/product/now'))
+console.log(data)
 </script>
 
 <template>
   <div>
+    <span class="text-xs">{{data}}</span>
     <Logos mb-6 />
     <Suspense>
       <ClientOnly>
